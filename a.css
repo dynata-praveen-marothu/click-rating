@@ -1,0 +1,61 @@
+.cls-item
+{
+    position: relative;
+    display: inline-block;
+    min-width:100px;
+    max-width:150px;
+    height:50px;
+    background-color: #fff0f0;
+    margin: 5px;
+    font-size: 10px;
+    font-family: 'Verdana';
+    vertical-align: top;
+    cursor: pointer;
+}
+
+.cls-noselect
+{
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */      
+}
+.cls-text
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cls-scale
+{
+    position: relative;
+    display: inline-block;
+    width:40%;
+    min-width: 300px;
+    height:80px;
+    background-color: #f0f0ff;
+    margin: 5px;
+    font-size: 10px;
+    font-family: 'Verdana';
+    vertical-align: top
+}
+.cls-stage
+{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    background-color: #FAFAFA;
+    margin:50px;
+}
+.cls-item-container
+{
+    text-align: center;
+    width: 100%;
+}
+.cls-scale-container
+{
+    text-align: center;
+    width: 100%;
+}
