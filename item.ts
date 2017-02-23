@@ -28,10 +28,6 @@ namespace clickrating{
 
         }
 
-        show(){
-            
-        }
-
         onDragStart=(e:MouseEvent)=>
         {
             this.dview=<HTMLElement>this.view.cloneNode(true);
@@ -40,11 +36,12 @@ namespace clickrating{
             let top  = this.view.offsetTop - this.parent.view.offsetTop;
             let left = this.view.offsetLeft - this.parent.view.offsetLeft;
 
-            this.dview.style.cssText=";position:absolute;top:" + top + "px;left:" + left + "px"
+            this.dview.style.cssText="position:absolute;top:" + top + "px;left:" + left + "px"
             this.view.style.visibility = 'hidden';
             document.addEventListener( 'mouseup'    ,  this.onDragStop )
             document.addEventListener( 'mousemove'  ,  this.onDrag )
         }
+
         onDragStop=(e:MouseEvent)=>
         {
             if(this.dview!=null)
@@ -53,6 +50,7 @@ namespace clickrating{
             this.view.style.visibility = 'visible';
             document.removeEventListener( 'mouseup' , this.onDragStop )
         }
+
         onDrag=(e:MouseEvent)=>
         {
             if(this.dview!=null)
@@ -67,5 +65,7 @@ namespace clickrating{
             }
 
         }
+
+
     }
 }

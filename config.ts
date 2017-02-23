@@ -18,7 +18,7 @@ export class Config{
     scales = [
         { precode: "1" , label: "Very Poor"},
         { precode: "2" , label: "Poor"},
-        { precode: "3" , label: "Acceptable dklfj sldkjf slkdf lsdfj sdf lsdfj lsdjf lsdjf kljl"},
+        { precode: "3" , label: "Acceptable"},
         { precode: "4" , label: "Good"},
         { precode: "5" , label: "Very Good"},
     ]

@@ -17,7 +17,7 @@ var clickrating;
             this.scales = [
                 { precode: "1", label: "Very Poor" },
                 { precode: "2", label: "Poor" },
-                { precode: "3", label: "Acceptable dklfj sldkjf slkdf lsdfj sdf lsdfj lsdjf lsdjf kljl" },
+                { precode: "3", label: "Acceptable" },
                 { precode: "4", label: "Good" },
                 { precode: "5", label: "Very Good" },
             ];
@@ -37,7 +37,7 @@ var clickrating;
                 _this.parent.parent.view.appendChild(_this.dview);
                 var top = _this.view.offsetTop - _this.parent.view.offsetTop;
                 var left = _this.view.offsetLeft - _this.parent.view.offsetLeft;
-                _this.dview.style.cssText = ";position:absolute;top:" + top + "px;left:" + left + "px";
+                _this.dview.style.cssText = "position:absolute;top:" + top + "px;left:" + left + "px";
                 _this.view.style.visibility = 'hidden';
                 document.addEventListener('mouseup', _this.onDragStop);
                 document.addEventListener('mousemove', _this.onDrag);
@@ -70,8 +70,6 @@ var clickrating;
             this.view.innerHTML = "<div class='cls-text cls-noselect'>" + props.label + "<div>";
             this.parent.view.appendChild(this.view);
             this.view.addEventListener('mousedown', this.onDragStart);
-        };
-        Item.prototype.show = function () {
         };
         return Item;
     }());
@@ -160,18 +158,17 @@ var clickrating;
         function Component(qid) {
             this.config = new clickrating.Config();
             this.config.params.qid = qid;
+            this.pview = window.document.getElementById(qid + "_stage");
         }
         Component.prototype.init = function () {
             var qid = this.config.params.qid;
             this.view = document.createElement("div");
             this.view.id = qid + "_component";
-            window.document.getElementById(qid + "_stage").appendChild(this.view);
+            this.pview.appendChild(this.view);
             this.icontainer = new clickrating.ItemContainer(this);
             this.scontainer = new clickrating.ScaleContainer(this);
             this.icontainer.init();
             this.scontainer.init();
-        };
-        Component.prototype.show = function () {
         };
         return Component;
     }());

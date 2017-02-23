@@ -11,6 +11,7 @@ namespace clickrating
     {
         config : Config;
         view:HTMLElement;
+        pview:HTMLElement;
 
         icontainer:ItemContainer;
         scontainer:ScaleContainer;
@@ -19,6 +20,7 @@ namespace clickrating
         {
             this.config = new Config();
             this.config.params.qid = qid;
+            this.pview = window.document.getElementById(qid + "_stage");
         }
 
         init()
@@ -27,18 +29,15 @@ namespace clickrating
 
             this.view = document.createElement("div")
             this.view.id=qid + "_component";
-            window.document.getElementById(qid + "_stage").appendChild(this.view);
+            this.pview.appendChild(this.view);
 
             this.icontainer=new ItemContainer(this)
             this.scontainer=new ScaleContainer(this)
 
             this.icontainer.init();
             this.scontainer.init();
+        }
 
-        }
-        show(){
-            
-        }
 
     }
 }
